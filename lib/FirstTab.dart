@@ -7,7 +7,7 @@ class firsttab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.grey.shade300,
-      child: Center(child: Text('EVENTS',style: TextStyle(fontSize: 50),)),
+      child: Center(child: Text('EVENTSS',style: TextStyle(fontSize: 50),)),
     );
   }
 }
