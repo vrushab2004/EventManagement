@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:math';
 import 'package:event_mgm/login2.dart';
+import 'package:event_mgm/main_page.dart';
 import 'package:event_mgm/theme/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
@@ -113,7 +114,7 @@ class _LoginPageState extends State<LoginPage> {
                   height: 50,
                   width: 300,
                   child: ElevatedButton(onPressed: (){
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>LoginPage2()));
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MainPage()));
                   }, child: Text('Login Now',style:GoogleFonts.aBeeZee(color:Colors.white,fontWeight:FontWeight.bold,fontSize:18)),style: ElevatedButton.styleFrom(
                     elevation: 5,
                     backgroundColor: CustomColors.buttoncolor

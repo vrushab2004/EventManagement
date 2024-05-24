@@ -5,6 +5,7 @@ import 'package:event_mgm/SecondTab.dart';
 import 'package:event_mgm/completed.dart';
 import 'package:event_mgm/login1.dart';
 import 'package:event_mgm/theme/colors.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -17,6 +18,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
@@ -28,10 +30,11 @@ class _HomeState extends State<Home> {
 const List<Tab> tabs = <Tab>[
   Tab(icon: Icon(Icons.event,color: Colors.white,),),
   Tab(icon: Icon(Icons.airplane_ticket,color: Colors.white,),),
+  
 ];
+
 class TabControllerExample extends StatelessWidget {
   const TabControllerExample({super.key});
-
   @override
   Widget build(BuildContext context) {
      return DefaultTabController(

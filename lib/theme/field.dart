@@ -6,7 +6,8 @@ class CustomTextField extends StatelessWidget {
   final String placeholder;
   final IconData icon;
   final bool obscure;
-  const CustomTextField({super.key,required this.placeholder,required this.icon,required this.obscure});
+  final TextEditingController controller;
+  const CustomTextField({super.key,required this.placeholder,required this.icon,required this.obscure,required this.controller});
 
   @override
   Widget build(BuildContext context) {
