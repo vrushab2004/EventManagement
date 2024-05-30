@@ -21,7 +21,30 @@ final _passwordcontroller = TextEditingController();
 
 
 Future signIn() async{
-  await FirebaseAuth.instance.signInWithEmailAndPassword(email: _usncontroller.text.trim(), password: _passwordcontroller.text.trim());
+  // await FirebaseAuth.instance.signInWithEmailAndPassword(
+  //   email: _usncontroller.text.trim(), 
+  //   password: _passwordcontroller.text.trim());
+  showDialog(context: context, builder: (context)=>const Center(
+    child: CircularProgressIndicator(),
+  ));
+
+  void displayMessageToUser(String message,BuildContext context){
+    showDialog(context: context, builder: (context)=>AlertDialog(
+      title: Text(message),
+    ));
+  }
+
+  try {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+    email: _usncontroller.text.trim(), 
+    password: _passwordcontroller.text.trim());
+    if(context.mounted) Navigator.pop(context);
+  }
+
+  on FirebaseAuthException catch (e){
+    Navigator.pop(context);
+    displayMessageToUser(e.code,context);
+  }
 }
 
 @override
@@ -59,16 +82,19 @@ Future signIn() async{
                      child: Text('Forgot password',style: TextStyle(color: Colors.red.shade400),))),
                 SizedBox(height: 40,),
                 Center(
-                  child: GestureDetector(
-                    onTap: signIn,
-                    child: Container(
-                      height: 60,
+                  child: Container(
+                    height: 60,
                       width: MediaQuery.of(context).size.width-50,
-                      child: ElevatedButton(onPressed: (){ Navigator.push(context,MaterialPageRoute(builder: (context)=>MainPage()));}, child: Text('Login',style:GoogleFonts.aBeeZee(color:Colors.white,fontWeight:FontWeight.bold,fontSize:18)),style: ElevatedButton.styleFrom(
-                          elevation: 5,
-                          backgroundColor: CustomColors.buttoncolor,
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))
-                        ),),
+                    child: GestureDetector(
+
+                      onTap: signIn,
+                      child:Text('Login',style:GoogleFonts.aBeeZee(color:Colors.white,fontWeight:FontWeight.bold,fontSize:18)),
+
+                      // style: ElevatedButton.styleFrom(
+                      //     elevation: 5,
+                      //     backgroundColor: CustomColors.buttoncolor,
+                      //     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))
+                      //   ),
                       ),
                   ),
                 )      

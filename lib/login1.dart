@@ -114,7 +114,7 @@ class _LoginPageState extends State<LoginPage> {
                   height: 50,
                   width: 300,
                   child: ElevatedButton(onPressed: (){
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MainPage()));
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const LoginPage2()));
                   }, child: Text('Login Now',style:GoogleFonts.aBeeZee(color:Colors.white,fontWeight:FontWeight.bold,fontSize:18)),style: ElevatedButton.styleFrom(
                     elevation: 5,
                     backgroundColor: CustomColors.buttoncolor
