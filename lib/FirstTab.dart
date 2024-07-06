@@ -3,14 +3,20 @@ import 'package:flutter/material.dart';
 
 class EventDetails {
   final String eventName;
-  final DateTime? dateTime; // Make dateTime nullable if it's optional
+  final DateTime? dateTime;
+  final String? speakerName;
   final String description;
+  final String? stageName;
+  final String? stageCapacity;
   final File? image;
 
   EventDetails({
     required this.eventName,
     required this.dateTime,
     required this.description,
+    this.speakerName,
+    this.stageName,
+    this.stageCapacity,
     this.image,
   });
 }
@@ -63,7 +69,7 @@ class FirstTab extends StatelessWidget {
                             ),
                             SizedBox(height: 4),
                             Text(
-                              'Speaker Name', // Replace with actual speaker name if available
+                              event.speakerName ?? 'Speaker name not set',
                               style: TextStyle(fontSize: 16, color: Colors.grey),
                             ),
                             SizedBox(height: 4),
@@ -72,7 +78,7 @@ class FirstTab extends StatelessWidget {
                               children: [
                                 Text(
                                   event.dateTime != null
-                                      ? '${event.dateTime!.day} ${event.dateTime!.month}, ${event.dateTime!.year}'
+                                      ? '${event.dateTime!.day}/${event.dateTime!.month}/${event.dateTime!.year}'
                                       : 'Date not set',
                                   style: TextStyle(fontSize: 14, color: Colors.grey),
                                 ),
@@ -86,7 +92,7 @@ class FirstTab extends StatelessWidget {
                             ),
                             SizedBox(height: 4),
                             Text(
-                              'Stage Name (Capacity)', // Replace with actual stage name and capacity if available
+                              '${event.stageName ?? 'Stage name not set'} (${event.stageCapacity ?? 'Capacity not set'})',
                               style: TextStyle(fontSize: 14, color: Colors.grey),
                             ),
                           ],

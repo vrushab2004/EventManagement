@@ -230,7 +230,10 @@ class _HomeState extends State<Home> {
                             setState(() {
                               events.add(EventDetails(
                                 eventName: result.eventName,
+                                speakerName:result.speakerName,
                                 dateTime: result.dateTime,
+                                stageName:result.stageName,
+                                stageCapacity:result.stageCapacity,
                                 description: result.description,
                                 image: result.image,
                               ));
@@ -258,7 +261,7 @@ class _HomeState extends State<Home> {
                         ),
                         style: ButtonStyle(
                             backgroundColor:
-                                MaterialStateProperty.all(CustomColors.buttoncolor)),
+                                WidgetStateProperty.all(CustomColors.buttoncolor)),
                       ),
                     ),
                   ),
