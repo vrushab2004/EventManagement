@@ -2,6 +2,7 @@ import 'dart:math';
 import 'package:event_mgm/FirstTab.dart';
 import 'package:event_mgm/OnGoing.dart';
 import 'package:event_mgm/SecondTab.dart';
+import 'package:event_mgm/addevent.dart';
 import 'package:event_mgm/completed.dart';
 import 'package:event_mgm/login1.dart';
 import 'package:event_mgm/theme/colors.dart';
@@ -154,7 +155,21 @@ void _logout(BuildContext context) async {
                      ))
                 ),
                 SizedBox(height: 90,),
-                ElevatedButton(onPressed: (){}, child: Text('Create Event')),
+                Center(
+                  child: Container(
+                    margin: EdgeInsets.only(left: 40,right: 40,top: 200),
+                    child: ElevatedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder:(context)=>const Addevent()),);}, child: Container(
+                      margin: EdgeInsets.only(left: 30,),
+                      child: Row(
+                        children: [
+                          Icon(Icons.add,color: Colors.white,),
+                          Text('Create Event',style:TextStyle(fontWeight: FontWeight.bold ,color: Colors.white),),
+                        ],
+                      ),
+                    ),
+                    style: ButtonStyle(backgroundColor:WidgetStatePropertyAll(CustomColors.buttoncolor)),
+                    )),
+                ),
                 
                 
             ],
