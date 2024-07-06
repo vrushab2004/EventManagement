@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'dart:math';
-import 'package:event_mgm/HomePage.dart';
-import 'package:event_mgm/login2.dart';
-import 'package:event_mgm/phone.dart';
-import 'package:event_mgm/theme/colors.dart';
+import 'package:eventz/HomePage.dart';
+import 'package:eventz/login2.dart';
+import 'package:eventz/phone.dart';
+import 'package:eventz/theme/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
 import 'package:loop_page_view/loop_page_view.dart';

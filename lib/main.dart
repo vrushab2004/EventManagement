@@ -1,9 +1,9 @@
-import 'package:event_mgm/HomePage.dart';
-import 'package:event_mgm/firebase_options.dart';
-import 'package:event_mgm/login1.dart';
-import 'package:event_mgm/login2.dart';
-import 'package:event_mgm/otp.dart';
-import 'package:event_mgm/phone.dart';
+import 'package:eventz/HomePage.dart';
+import 'package:eventz/firebase_options.dart';
+import 'package:eventz/login1.dart';
+import 'package:eventz/login2.dart';
+import 'package:eventz/otp.dart';
+import 'package:eventz/phone.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
