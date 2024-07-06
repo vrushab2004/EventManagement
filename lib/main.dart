@@ -22,7 +22,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       // Define the named routes
       routes: {
-        '/': (context) => LoginPage(),
+        '/': (context) => Home(),
+        '/login': (context) => LoginPage(),
         'phone': (context) => MyPhone(),
         'verify': (context) => MyVerify(),
       },

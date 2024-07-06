@@ -5,6 +5,7 @@ import 'package:event_mgm/SecondTab.dart';
 import 'package:event_mgm/completed.dart';
 import 'package:event_mgm/login1.dart';
 import 'package:event_mgm/theme/colors.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -31,7 +32,14 @@ const List<Tab> tabs = <Tab>[
 ];
 class TabControllerExample extends StatelessWidget {
   const TabControllerExample({super.key});
-
+void _logout(BuildContext context) async {
+    await FirebaseAuth.instance.signOut();
+    Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(builder: (context) => LoginPage()),
+      (Route<dynamic> route) => false,
+    );
+  }
   @override
   Widget build(BuildContext context) {
      return DefaultTabController(
@@ -139,12 +147,14 @@ class TabControllerExample extends StatelessWidget {
                         content: Text('Are you ready to sign-out ?',style: GoogleFonts.aBeeZee(color:Colors.black,fontWeight:FontWeight.bold,fontSize:16),),
                         backgroundColor:Colors.white,
                         actions: <Widget>[
-                          TextButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>const LoginPage()),);}, child:Text('OK',style: GoogleFonts.aBeeZee(color:Colors.red,fontWeight:FontWeight.bold,fontSize:14),)),
+                          TextButton(onPressed: (){_logout(context);}, child:Text('OK',style: GoogleFonts.aBeeZee(color:Colors.red,fontWeight:FontWeight.bold,fontSize:14),)),
                           TextButton(onPressed: (){Navigator.pop(context);}, child:Text('Cancel',style: GoogleFonts.aBeeZee(color:Colors.green,fontWeight:FontWeight.bold,fontSize:14),)),
                         ],
                                            ),
                      ))
                 ),
+                SizedBox(height: 90,),
+                ElevatedButton(onPressed: (){}, child: Text('Create Event')),
                 
                 
             ],
