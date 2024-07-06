@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "910100511725",
+    "project_id": "eventzz-ca4bb",
+    "storage_bucket": "eventzz-ca4bb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:910100511725:android:3cfdf2fe230939cc47c5e4",
+        "android_client_info": {
+          "package_name": "com.example.eventz"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBg30RFEb9QGjGoiRg3RYfpBpeEE4udRE8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
